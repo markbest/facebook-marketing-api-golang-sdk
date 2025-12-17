@@ -20,6 +20,11 @@ github.com/gopherjs/gopherjs/js
 # github.com/jtolds/gls v4.20.0+incompatible
 ## explicit
 github.com/jtolds/gls
+# github.com/justwatch/facebook-marketing-api-golang-sdk v1.32.0
+## explicit; go 1.20
+github.com/justwatch/facebook-marketing-api-golang-sdk/fb
+github.com/justwatch/facebook-marketing-api-golang-sdk/marketing/v16/types
+github.com/justwatch/facebook-marketing-api-golang-sdk/marketing/v22
 # github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d
 ## explicit
 github.com/smartystreets/assertions
