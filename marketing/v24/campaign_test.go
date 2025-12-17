@@ -1,4 +1,4 @@
-package v22_test
+package v24_test
 
 import (
 	"net/url"
