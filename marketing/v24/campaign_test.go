@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/justwatch/facebook-marketing-api-golang-sdk/marketing/v22"
+	v22 "github.com/markbest/facebook-marketing-api-golang-sdk/marketing/v22"
 )
 
 func toStrings(status []v22.EffectiveStatus) []string {

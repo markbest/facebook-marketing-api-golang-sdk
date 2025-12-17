@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/justwatch/facebook-marketing-api-golang-sdk/fb"
+	"github.com/markbest/facebook-marketing-api-golang-sdk/fb"
 )
 
 // EffectiveStatus represents the possible values for a campaign's
