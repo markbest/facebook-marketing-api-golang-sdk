@@ -223,6 +223,8 @@ type PromotedObject struct {
 	PixelRule          string `json:"pixel_rule,omitempty"`
 	CustomEventType    string `json:"custom_event_type,omitempty"`
 	CustomConversionID string `json:"custom_conversion_id,omitempty"`
+	ApplicationID      string `json:"application_id,omitempty"`
+	ObjectStoreURL     string `json:"object_store_url,omitempty"`
 }
 
 // Targeting contains all the targeting information of an adset.
@@ -256,6 +258,11 @@ type Targeting struct {
 	UserOs                      []string                 `json:"user_os,omitempty"`
 	WirelessCarrier             []string                 `json:"wireless_carrier,omitempty"`
 	TargetingRelaxationTypes    TargetingRelaxationTypes `json:"targeting_relaxation_types,omitempty"`
+	TargetingAutomation         TargetingAutomation      `json:"targeting_automation,omitempty"`
+}
+
+type TargetingAutomation struct {
+	AdvantageAudience uint64 `json:"advantage_audience"`
 }
 
 // Advantage custom audience and Advantage lookalike can be enabled or disabled.
@@ -290,6 +297,7 @@ type IDContainer struct {
 // GeoLocations is a set of countries, cities, and regions that can be targeted.
 type GeoLocations struct {
 	Countries     []string `json:"countries,omitempty"`
+	CountryGroups []string `json:"country_groups,omitempty"`
 	LocationTypes []string `json:"location_types,omitempty"`
 	Cities        []City   `json:"cities,omitempty"`
 	Regions       []Region `json:"regions,omitempty"`
