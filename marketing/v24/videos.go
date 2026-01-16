@@ -31,7 +31,7 @@ func (vs *VideoService) Get(ctx context.Context, id string) (*Video, error) {
 }
 
 // Upload uploads a video from r into an account.
-func (vs *VideoService) Upload(ctx context.Context, act, title string, size int64, r io.Reader) (*Video, error) {
+func (vs *VideoService) Upload(ctx context.Context, act, title string, size int64, r io.Reader) (string, error) {
 	url := fb.NewRoute(Version, "/act_%s/advideos", act).String()
 
 	res := uploadVideoResponse{}
@@ -40,7 +40,7 @@ func (vs *VideoService) Upload(ctx context.Context, act, title string, size int6
 		FileSize:    size,
 	}, &res)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	for size > 0 {
@@ -55,7 +55,7 @@ func (vs *VideoService) Upload(ctx context.Context, act, title string, size int6
 			"start_offset":      fmt.Sprintf("%d", res.StartOffset),
 		}, &res)
 		if err != nil {
-			return nil, err
+			return "", err
 		}
 	}
 
@@ -66,10 +66,10 @@ func (vs *VideoService) Upload(ctx context.Context, act, title string, size int6
 		Title:           title,
 	}, &fr)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	return vs.Get(ctx, res.VideoID)
+	return res.VideoID, nil
 }
 
 // ReadList returns all videos from an account and writes them to a channel.
