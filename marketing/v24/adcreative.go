@@ -341,7 +341,6 @@ type CreativeFeaturesSpec struct {
 	ProductExtensions          *EnrollStatus `json:"product_extensions,omitempty"`            // Opt-in if you want items from your catalog to be shown next to your selected media when it’s likely to improve performance.
 	VideoHighlights            *EnrollStatus `json:"video_highlights,omitempty"`              // Opt-in if you want video highlights to be generated for your video when it’s likely to improve performance.
 	VideoFiltering             *EnrollStatus `json:"video_filtering,omitempty"`               // Opt-in if you want video filtering to be applied to your video when it’s likely to improve performance.
-	StandardEnhancements       *EnrollStatus `json:"standard_enhancements,omitempty"`         // Opt-in if you want standard enhancements to be applied to your ad creative when it’s likely to improve performance.
 }
 
 const (
