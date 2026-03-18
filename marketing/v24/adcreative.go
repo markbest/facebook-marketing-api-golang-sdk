@@ -269,6 +269,8 @@ type AdCreative struct {
 	Adlabels []json.RawMessage `json:"adlabels,omitempty"`
 	// DegreesOfFreedomSpec Specifies the types of transformations that are enabled for the given creative. For more information, see Ad Creative Degrees Of Freedom Spec, Reference.
 	DegreesOfFreedomSpec *DegreesOfFreedomSpec `json:"degrees_of_freedom_spec,omitempty"`
+	// Multiple advertisers' advertisements
+	ContextualMultiAds *EnrollStatus `json:"contextual_multi_ads,omitempty"`
 }
 
 type adCreativeContainer struct {
@@ -337,6 +339,9 @@ type CreativeFeaturesSpec struct {
 	AdaptToPlacement           *EnrollStatus `json:"adapt_to_placement,omitempty"`            // Opt-in if you want 9:16 images in your catalog to be displayed in supported placements (Instagram Stories/Instagram Reels/Facebook Stories/Facebook Reels).
 	MediaTypeAutomation        *EnrollStatus `json:"media_type_automation,omitempty"`         // Opt-in if you want videos from your catalog to be displayed (along with images) in supported placements.
 	ProductExtensions          *EnrollStatus `json:"product_extensions,omitempty"`            // Opt-in if you want items from your catalog to be shown next to your selected media when it’s likely to improve performance.
+	VideoHighlights            *EnrollStatus `json:"video_highlights,omitempty"`              // Opt-in if you want video highlights to be generated for your video when it’s likely to improve performance.
+	VideoFiltering             *EnrollStatus `json:"video_filtering,omitempty"`               // Opt-in if you want video filtering to be applied to your video when it’s likely to improve performance.
+	StandardEnhancements       *EnrollStatus `json:"standard_enhancements,omitempty"`         // Opt-in if you want standard enhancements to be applied to your ad creative when it’s likely to improve performance.
 }
 
 const (
