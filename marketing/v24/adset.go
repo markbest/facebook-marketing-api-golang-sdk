@@ -207,6 +207,11 @@ type Adset struct {
 	InstagramUserID              string                 `json:"instagram_user_id,omitempty"`
 	RegionalRegulatedCategories  []string               `json:"regional_regulated_categories,omitempty"`
 	RegionalRegulationIdentities map[string]string      `json:"regional_regulation_identities,omitempty"`
+	BidConstraints               *BidConstraints        `json:"bid_constraints,omitempty"`
+}
+
+type BidConstraints struct {
+	RoasAverageFloor int64 `json:"roas_average_floor,omitempty"`
 }
 
 // FrequencyControlSpec controls the frequency of an adset.
